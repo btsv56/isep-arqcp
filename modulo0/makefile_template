@@ -1,0 +1,18 @@
+INCLUDES =
+SOURCES =
+OBJFILES =
+EXEC =
+
+.SUFFIXES: .c .o
+
+.c .o:
+	gcc -Wall -g -c $<
+	
+${EXEC}: ${OBJFILES}
+	gcc -Wall -g ${OBJFILES} -o ${EXEC}
+	
+run: ${EXEC}
+	./${EXEC}
+	
+clean:
+	rm -f ${OBJFILES} ${EXEC} 
